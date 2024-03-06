@@ -81,7 +81,7 @@ export const fetchAudio = async (
 ): Promise<string> => {
   const key = import.meta.env.VITE_API_KEY;
   const RapidKey = import.meta.env.VITE_RAPID_KEY;
-  var lang: string = "";
+  let lang: string = "";
 
   const encodedParams = new URLSearchParams();
   encodedParams.set("src", text);

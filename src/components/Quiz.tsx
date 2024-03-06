@@ -1,5 +1,5 @@
 import { FormControlLabel, Radio, RadioGroup } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { saveResults } from "../Redux/slices";
@@ -27,7 +27,7 @@ const Quiz = () => {
 
       navigate("/result");
     }
-  }, [result]);
+  }, [count, dispatch, navigate, result]);
 
   return (
     <div className="quiz">

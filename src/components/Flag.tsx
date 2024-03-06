@@ -1,4 +1,3 @@
-import React from "react";
 import american from "../Assests/American.svg";
 import indian from "../Assests/indian.svg";
 import japan from "../Assests/japan.svg";

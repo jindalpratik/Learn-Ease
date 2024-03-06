@@ -1,6 +1,4 @@
-import React from "react";
 import "../App.css";
-import SchoolIcon from "@mui/icons-material/School";
 import logo from "../Assests/logo.jpg";
 const Header = () => {
   return (

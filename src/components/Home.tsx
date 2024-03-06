@@ -1,5 +1,3 @@
-import React from "react";
-import SchoolIcon from "@mui/icons-material/School";
 import { useNavigate } from "react-router-dom";
 import Flag from "./Flag";
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
@@ -50,7 +50,7 @@ const Learning = () => {
       alert("SOME ERROR");
       dispatch(clearState());
     }
-  }, []);
+  }, [dispatch, error, params]);
 
   if (loading) {
     return <Loader />;

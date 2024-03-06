@@ -6,6 +6,7 @@ import Learning from "./components/Learning";
 import Quiz from "./components/Quiz";
 import Results from "./components/Results";
 import LangSelect from "./components/LangSelect";
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/get-started" element={<LangSelect />} />
 
+          <Route path="/footer" element={<Footer/>}/>
           <Route path="/" element={<Home />} />
           <Route path="/learn" element={<Learning />} />
           <Route path="/quiz" element={<Quiz />} />

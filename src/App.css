@@ -1,0 +1,420 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+/*  --main-color: #f73434; */
+
+:root {
+  --main-color: #f3b313;
+  --secondary-color: #212121;
+}
+
+.Header {
+  height: 10vh;
+  width: 100vw;
+  background-color: var(--main-color);
+}
+
+.Header > h1 {
+  font-weight: 900;
+  color: var(--secondary-color);
+  font-size: 300%;
+}
+.Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Home > h1 {
+  color: var(--secondary-color);
+  font-size: 300%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.Home > p {
+  color: var(--secondary-color);
+  font-size: 150%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.lang-but {
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+  padding: 10px;
+  border: 0px;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 10px;
+}
+.lang {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.learning {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 40vw;
+  margin-left: auto;
+  margin-right: auto;
+  height: 40vh;
+}
+
+.learning > button {
+  margin-top: 20px;
+  color: var(--main-color);
+  background-color: #21212100;
+  border: 0px;
+  cursor: pointer;
+}
+
+.word {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.word > h1 {
+  font-weight: lighter;
+}
+
+.word > svg {
+  margin-top: auto;
+  margin-bottom: auto;
+  color: var(--main-color);
+  margin-left: 10px;
+  cursor: pointer;
+}
+.word > p {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.output {
+  color: rgb(79, 79, 248);
+}
+
+.next {
+  background-color: var(--main-color) !important;
+  color: var(--secondary-color) !important;
+  width: 70%;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: large;
+  cursor: pointer;
+  font-weight: 600;
+}
+.quiz {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 40vw;
+  margin-left: auto;
+  margin-right: auto;
+  height: 80vh;
+  background-color: #bfb3b300;
+  margin-top: 20px;
+}
+.next2 {
+  background-color: var(--main-color) !important;
+  color: var(--secondary-color) !important;
+  width: 80%;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: large;
+  cursor: pointer;
+  font-weight: 600;
+  border: 0px;
+}
+.quiz > h3 {
+  color: var(--main-color);
+}
+.quiz > p {
+  font-size: 150%;
+}
+/* HTML: <div class="loader"></div> */
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 30px;
+  aspect-ratio: 1;
+  display: grid;
+  transform: translateY(100%);
+}
+.loader::before,
+.loader::after {
+  content: "";
+  grid-area: 1/1;
+  border-radius: 50%;
+  transform-origin: bottom;
+  position: relative;
+}
+.loader::before {
+  background: radial-gradient(at 30% 30%, #0000, #000a) red;
+  transform: scaleY(0.65);
+  top: 0;
+  animation: l11-1, l11-2;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(0, 400, 1, 400), ease;
+  animation-iteration-count: infinite;
+}
+.loader::after {
+  background: #ccc;
+  filter: blur(8px);
+  transform: scaleY(0.3) translate(0px, 0px);
+  left: 0;
+  animation: l11-3 2s cubic-bezier(0, 400, 1, 400) infinite;
+}
+@keyframes l11-1 {
+  100% {
+    top: -0.2px;
+  }
+}
+@keyframes l11-2 {
+  4%,
+  96% {
+    transform: scaleY(1);
+  }
+}
+@keyframes l11-3 {
+  100% {
+    transform: scaleY(0.3) translate(0.1px, -0.1px);
+  }
+}
+
+.loading {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20%;
+}
+.result > h1 {
+  color: var(--main-color);
+}
+.result > p {
+  font-size: larger;
+}
+.result {
+  margin-top: 40px;
+  width: 50%;
+  min-height: 70vh;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.result-sheet {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20%;
+}
+.each1 {
+  display: flex;
+}
+.each1 > h2 {
+  font-weight: 500;
+}
+.each2 {
+  display: flex;
+}
+.each2 > h2 {
+  font-weight: 500;
+}
+.your {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.your > h2 {
+  margin-bottom: 10px;
+}
+.actual {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.actual > h2 {
+  margin-bottom: 10px;
+}
+.pass {
+  color: rgb(5, 195, 5);
+}
+.fail {
+  color: red;
+}
+.reset {
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+  width: 15%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.header {
+  height: 10vh;
+  width: 100vw;
+  /* background-color: aliceblue; */
+  display: flex;
+  /* justify-content: space-around; */
+  margin-top: 0px;
+  justify-content: space-evenly;
+}
+.header > h3 {
+  color: rgb(161, 161, 161);
+  margin-top: 50px;
+  margin-bottom: auto;
+}
+.image-icon {
+  /* border-color: var(--secondary-color); */
+  width: 20%;
+  /* background-color: #212121; */
+  height: 170%;
+  background-image: url("./Assests/logo.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 0px;
+  margin-bottom: auto;
+  align-self: first baseline;
+}
+.company {
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+  height: 100%;
+  gap: 10px;
+}
+.name {
+  margin-top: auto;
+  margin-bottom: auto;
+  color: var(--main-color);
+  font-size: 300%;
+}
+.button-Signup {
+  display: inline-block;
+  border-radius: 7px;
+  border: none;
+  background: var(--main-color);
+  color: white;
+  font-family: inherit;
+  text-align: center;
+  font-size: 17px;
+  box-shadow: 0px 14px 56px -11px var(--main-color);
+  width: 15em;
+  padding: 10px;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.button-Signup span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.4s;
+}
+
+.button-Signup span:after {
+  content: "for free";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.7s;
+}
+
+.button-Signup:hover span {
+  padding-right: 3.55em;
+}
+
+.button-Signup:hover span:after {
+  opacity: 4;
+  right: 0;
+}
+
+.button-getStarted {
+  --color: var(--main-color);
+  font-family: inherit;
+  display: inline-block;
+  width: 15em;
+  height: 2.6em;
+  line-height: 2.5em;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--color);
+  transition: color 0.5s;
+  z-index: 1;
+  font-size: 17px;
+  border-radius: 6px;
+  font-weight: 600;
+  color: var(--color);
+}
+
+.button-getStarted:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 150px;
+  width: 250px;
+  border-radius: 50%;
+}
+
+.button-getStarted:hover {
+  color: #fff;
+}
+
+.button-getStarted:before {
+  top: 100%;
+  left: 100%;
+  transition: all 0.7s;
+}
+
+.button-getStarted:hover:before {
+  top: -30px;
+  left: -30px;
+}
+
+.button-getStarted:active:before {
+  background: var(--main-color);
+  transition: ease-in;
+}
+.photo {
+  background: url("./Assests/one.svg");
+  width: 50%;
+  height: 70vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.landing-page {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  justify-content: center;
+}
+.tag {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.tag > h1 {
+  letter-spacing: 2px;
+  font-size: 250%;
+  margin-bottom: 20px;
+  color: rgb(53, 53, 53);
+}
+.flag-div {
+  display: flex;
+  flex-direction: row;
+  height: 10vh;
+  justify-content: space-evenly;
+}
+.flag {
+  height: 100%;
+}

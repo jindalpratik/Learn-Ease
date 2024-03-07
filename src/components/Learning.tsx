@@ -23,6 +23,15 @@ const Learning = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const clickHandler = async () => {
+    if (count <= 6) {
+      console.log(count);
+      setCount(count + 1);
+    } else {
+      console.log("click");
+      navigate("/quiz");
+    }
+  };
 
   const audioHandler = async () => {
     const data = await fetchAudio(words[count]?.word, params);
@@ -31,14 +40,12 @@ const Learning = () => {
     setTimeout(() => {
       setAudiosrc("");
     }, 1500);
-
   };
 
   useEffect(() => {
     dispatch(getWordsRequest());
     translateWords(params || "hi")
       .then((arr) => {
-        
         dispatch(getWordsSucess(arr));
       })
       .catch((error) => {
@@ -50,54 +57,54 @@ const Learning = () => {
       alert("SOME ERROR");
       dispatch(clearState());
     }
-  }, [dispatch, error, params]);
+  }, []);
 
   if (loading) {
     return <Loader />;
   }
 
   return (
-    <div className="learning">
-      <button
-        onClick={
-          count === 0
-            ? () => {
-                navigate("/get-started");
-              }
-            : () => {
-                setCount(count - 1);
-              }
-        }
-      >
-        <ArrowBackIcon />
-      </button>
-
-      <p>Learning Made Simple...</p>
-
-      <div className="word">
-        <h1>{count + 1}</h1>
-        <p>-</p>
-        <h1>{words[count]?.word}</h1>
-        <h1>:</h1>
-        <h1 className="output">{words[count]?.meaning}</h1>
-        {audiosrc && <audio src={audiosrc} autoPlay></audio>}
-        <VolumeUpIcon onClick={audioHandler} />
+    <div className="learning-main">
+      <div className="image-gify">
+        <img
+          src="https://media2.giphy.com/media/5Z5EOf7ChDnQIq1fgV/giphy.gif?cid=ecf05e47qxtbjapmzot50mssuh1t649hpupjmkwnybc4x2rh&ep=v1_gifs_related&rid=giphy.gif&ct=s"
+          alt=""
+        />
       </div>
+      <div className="learning">
+        <h2 className="learning-title">Learn the words...</h2>
 
-      <button
-        className="next"
-        onClick={
-          count === 7
-            ? () => {
-                navigate("/quiz");
-              }
-            : () => {
-                setCount(count + 1);
-              }
-        }
-      >
-        {count === 7 ? "Take Test" : "Next"}
-      </button>
+        <div className="word">
+          <h1 className="question">{count + 1}</h1>
+          <p>.</p>
+          <h1 className="question">{words[count]?.word}</h1>
+          <h1>:</h1>
+          <h1 className="output">{words[count]?.meaning}</h1>
+          {audiosrc && <audio src={audiosrc} autoPlay></audio>}
+          <VolumeUpIcon onClick={audioHandler} />
+        </div>
+
+        <div className="navigation-buttons">
+          <button
+            className="next"
+            disabled={count === 0}
+            onClick={() => {
+              setCount((prevCount) => prevCount - 1);
+            }}
+          >
+            Previous
+          </button>
+          <button
+            className="next"
+            // onClick={() => {
+            //   setCount((prevCount) => prevCount + 1);
+            // }}
+            onClick={clickHandler}
+          >
+            {count === words.length - 1 ? "Take Test" : "Next"}
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

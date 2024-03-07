@@ -59,7 +59,7 @@ export const translateWords = async (lang: LangType): Promise<WordType[]> => {
       const options = generateMcqs(words, index);
       // console.log("options");
       // console.log(options);
-      // // console.log(words);
+      // console.log(words);
 
       return {
         word: i.translations[0].text,
@@ -81,7 +81,7 @@ export const fetchAudio = async (
 ): Promise<string> => {
   const key = import.meta.env.VITE_API_KEY;
   const RapidKey = import.meta.env.VITE_RAPID_KEY;
-  let lang: string = "";
+  var lang: string = "";
 
   const encodedParams = new URLSearchParams();
   encodedParams.set("src", text);

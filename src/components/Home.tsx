@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Flag from "./Flag";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const language = [
@@ -25,7 +26,7 @@ const Home = () => {
 
   const clickHandler = (): void => {
     console.log(language);
-    navigate('/get-started');
+    navigate("/get-started");
   };
 
   return (
@@ -54,17 +55,22 @@ const Home = () => {
         <div className="photo"></div>
         <div className="tag">
           <h1>
-            Discover, Learn, Grows
+            Discover, Learn, Grow
             <br />
             <span>:Ignite Your Learning Journey</span>
           </h1>
 
-          <button className="button-getStarted" data-text="Awesome"
-          onClick={clickHandler}>
+          <button
+            className="button-getStarted"
+            data-text="Awesome"
+            onClick={clickHandler}
+          >
             Get-Started
           </button>
           <button className="button-Signup">
-            <span>Signup</span>
+            <Link to="/login">
+              <span>Login</span>
+            </Link>
           </button>
         </div>
       </div>

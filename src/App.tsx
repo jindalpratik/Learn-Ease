@@ -6,10 +6,11 @@ import Learning from "./components/Learning";
 import Quiz from "./components/Quiz";
 import Results from "./components/Results";
 import LangSelect from "./components/LangSelect";
-import Footer from "./components/Footer";
+import Login from "./components/Login";
+
+import AboutUs from "./components/AboutUs";
 
 function App() {
-
   return (
     <>
       <Router>
@@ -17,11 +18,12 @@ function App() {
         <Routes>
           <Route path="/get-started" element={<LangSelect />} />
 
-          <Route path="/footer" element={<Footer/>}/>
+          <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/" element={<Home />} />
           <Route path="/learn" element={<Learning />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/result" element={<Results />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </Router>
     </>

@@ -1,58 +1,61 @@
 import SchoolIcon from "@mui/icons-material/School";
 import { useNavigate } from "react-router-dom";
+import japaneseFlag from "../Assests/japan.svg";
+import hindiFlag from "../Assests/indian.svg";
+import spanishFlag from "../Assests/china.svg";
+import frenchFlag from "../Assests/france.svg";
+
 const LangSelect = () => {
+  const language = [
+    {
+      name: "Japanese",
+      code: "ja",
+      flag: japaneseFlag,
+    },
+    {
+      name: "Hindi",
+      code: "hi",
+      flag: hindiFlag,
+    },
+    {
+      name: "Spanish",
+      code: "es",
+      flag: spanishFlag,
+    },
+    {
+      name: "French",
+      code: "fr",
+      flag: frenchFlag,
+    },
+  ];
 
-    const language = [
-      {
-        name: "Japanese",
-        code: "ja",
-      },
-      {
-        name: "Hindi",
-        code: "hi",
-      },
-      {
-        name: "Spanish",
-        code: "es",
-      },
-      {
-        name: "French",
-        code: "fr",
-      },
-    ];
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
+  const clickHandler = (languageCode: string): void => {
+    console.log(languageCode);
+    navigate(`/learn?language=${languageCode}`);
+  };
 
-    const clickHandler = (language: string): void => {
-      console.log(language);
-      navigate(`/learn?language=${language}`);
-    };
   return (
-
     <>
-     <div className="Home">
-       <h1>Start Learning...</h1>
+      <div className="Home">
+        <h1>Start Learning...</h1>
 
-       <div className="lang">
-         {language.map((i) => (
-          <button
-            key={i.code}
-            onClick={() => clickHandler(i.code)}
-            className="lang-but"
-          >
-            {i.name}
-          </button>
-        ))}
+        <div className="lang">
+          {language.map((lang) => (
+            <div key={lang.code} className="lang-item" onClick={() => clickHandler(lang.code)}>
+              <img src={lang.flag} alt={lang.name} className="flag" />
+              <h3 className="lang-button">{lang.name}</h3>
+            </div>
+          ))}
+        </div>
+
+        <h2>
+          Select a Language to Start <SchoolIcon />
+        </h2>
       </div>
-
-      <p>
-        Select a Language to Start <SchoolIcon />
-      </p>
-
-    </div>
-    
     </>
-    )
-}
+  );
+};
 
-export default LangSelect
+export default LangSelect;

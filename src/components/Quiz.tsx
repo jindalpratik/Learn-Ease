@@ -27,7 +27,7 @@ const Quiz = () => {
 
       navigate("/result");
     }
-  }, [count, dispatch, navigate, result]);
+  }, [result]);
 
   return (
     <div className="quiz">

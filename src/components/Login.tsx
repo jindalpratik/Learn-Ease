@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import Flag from "./Flag";
-import { Link } from "react-router-dom";
 
-const Home = () => {
+import Flag from "./Flag";
+
+const Login = () => {
   const language = [
     {
       name: "Japanese",
@@ -53,25 +53,18 @@ const Home = () => {
     <>
       <div className="landing-page">
         <div className="photo"></div>
-        <div className="tag">
-          <h1>
-            Discover, Learn, Grow
+        <div className="Login-input">
+          <form action="#">
+            <label htmlFor="username">Username:</label>
             <br />
-            <span>:Ignite Your Learning Journey</span>
-          </h1>
-
-          <button
-            className="button-getStarted"
-            data-text="Awesome"
-            onClick={clickHandler}
-          >
-            Get-Started
-          </button>
-          <button className="button-Signup">
-            <Link to="/login">
-              <span>Login</span>
-            </Link>
-          </button>
+            <input type="text" id="username" name="username" />
+            <br />
+            <label htmlFor="password">Password:</label>
+            <br />
+            <input type="password" id="password" name="password" />
+            <br />
+            <input type="submit" className="submit" value="Login" />
+          </form>
         </div>
       </div>
       <Flag />
@@ -79,4 +72,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Login;

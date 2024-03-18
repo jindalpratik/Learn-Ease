@@ -1,34 +1,6 @@
-import { useNavigate } from "react-router-dom";
-
 import Flag from "./Flag";
 
 const Login = () => {
-  const language = [
-    {
-      name: "Japanese",
-      code: "ja",
-    },
-    {
-      name: "Hindi",
-      code: "hi",
-    },
-    {
-      name: "Spanish",
-      code: "es",
-    },
-    {
-      name: "French",
-      code: "fr",
-    },
-  ];
-
-  const navigate = useNavigate();
-
-  const clickHandler = (): void => {
-    console.log(language);
-    navigate("/get-started");
-  };
-
   return (
     // <div className="Home">
     //   <h1>Start Learning...</h1>
